@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+# backup da versão madeireira e fotos antigas que o site não usa mais
+original-madeireira/
+assets/madeiras/
+assets/architect-faq*.jpg
+assets/corporate-*.jpg
+assets/facade.jpg
+assets/hero-reference-v2.jpg
+assets/kitchen.jpg
+assets/living.jpg
+assets/office.jpg
