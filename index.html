@@ -660,17 +660,10 @@ const quoteForm = document.querySelector('#contact-form');
 const quoteSuccess = document.querySelector('#form-success');
 let selectedProduct = '';
 let lastSuggestedMessage = '';
+// Todos os CTAs abrem o WhatsApp direto (sem formulário). Com serviço escolhido, a mensagem já cita o serviço.
 function openQuote(product = '') {
-  if (quoteForm.hidden) {
-    quoteForm.reset();
-    quoteForm.hidden = false;
-    quoteSuccess.hidden = true;
-  }
-  if (product && (!quoteForm.elements.message.value.trim() || quoteForm.elements.message.value === lastSuggestedMessage)) {
-    lastSuggestedMessage = 'Tenho interesse em: ' + product + '\n';
-    quoteForm.elements.message.value = lastSuggestedMessage;
-  }
-  contactModal.showModal();
+  const texto = product ? 'Olá! Vim pelo site e tenho interesse em: ' + product + '.' : 'Olá! Vim pelo site e quero agendar um horário na Perfect.';
+  window.open('https://wa.me/5531971598301?text=' + encodeURIComponent(texto), '_blank', 'noopener');
 }
 document.querySelectorAll('.project').forEach(card => {
   card.addEventListener('click', () => {
